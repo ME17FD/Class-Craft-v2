@@ -1,0 +1,365 @@
+@import '../../styles/variable.css';
+
+/* Base Modal Styles */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Form Elements */
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: var(--background-light);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+    background-color: white;
+}
+
+.formGroup textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.error {
+    color: var(--danger-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+
+/* Modal Actions */
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* Scrollbar Styling */
+
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+
+/* Module and Submodule Selection */
+
+.moduleSelection {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.moduleSelection select {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.selectedItemsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background-color: var(--background-light);
+    border-radius: 6px;
+}
+
+.selectedItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.selectionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+
+/* Submodules Specific Styles */
+
+.subModulesSelection {
+    margin: 1rem 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.subModulesSelection label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.checkboxItem {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: var(--background-light);
+    transition: background-color 0.2s;
+}
+
+.checkboxItem:hover {
+    background-color: #e2e8f0;
+}
+
+.checkboxItem input {
+    margin-right: 0.75rem;
+    cursor: pointer;
+}
+
+.checkboxItem label {
+    cursor: pointer;
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+
+/* Delete Confirmation */
+
+.deleteConfirmation {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.deleteConfirmation p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.warning {
+    color: var(--danger-color);
+    font-weight: 500;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+}
+
+
+/* Responsive Adjustments */
+
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .moduleSelection {
+        flex-direction: column;
+    }
+
+    .selectionContainer {
+        gap: 1rem;
+    }
+}
+
+
+/* Professors Specific */
+
+.professorSubModules {
+    background-color: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.professorSubModules h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+}
+
+
+/* Items List */
+
+.itemsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+
+/* Button Styles */
+
+.button {
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.button.primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.button.primary:hover {
+    background-color: #2b6cb0;
+}
+
+.button.secondary {
+    background-color: white;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+}
+
+.button.secondary:hover {
+    background-color: #ebf8ff;
+}
+
+.button.delete {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.button.delete:hover {
+    background-color: #c53030;
+}
+
+
+/* Module Tags */
+
+.moduleTag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e6fffa;
+    color: #234e52;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Utility Classes */
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}

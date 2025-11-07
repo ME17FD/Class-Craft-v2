@@ -1,0 +1,16 @@
+@import '../../styles/variable.css';
+.container {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}

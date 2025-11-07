@@ -1,0 +1,11 @@
+@import '../../styles/variable.css';
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}

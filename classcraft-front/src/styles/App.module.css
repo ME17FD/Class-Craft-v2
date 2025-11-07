@@ -1,0 +1,37 @@
+.app {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.nav {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1rem;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #495057;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.navLink:hover {
+    background-color: #f8f9fa;
+    color: #228be6;
+}
+
+.navLink.active {
+    background-color: #e7f5ff;
+    color: #228be6;
+    font-weight: 500;
+}
+
+.main {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}

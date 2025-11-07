@@ -1,0 +1,18 @@
+.dateRangeContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.dateInput {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} 

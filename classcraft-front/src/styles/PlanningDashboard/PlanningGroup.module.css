@@ -1,0 +1,807 @@
+/* GroupPlanning.module.css */
+
+
+/* Variables CSS */
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --background-light: #f8f9fa;
+    --border-color: #e2e8f0;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --modal-z-index: 1000;
+}
+
+
+/* Styles généraux */
+
+
+/* PlanningGroup.module.css */
+
+.groupExamCard {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    margin-bottom: 16px;
+    transition: transform 0.2s;
+}
+
+.groupExamCard:hover {
+    transform: translateY(-2px);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+}
+
+.cardHeader h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.badge {
+    background: #1976d2;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.examList,
+.makeupList {
+    margin: 8px 0;
+}
+
+.examList h4,
+.makeupList h4 {
+    margin: 6px 0;
+    color: #555;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.examItem,
+.makeupItem {
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 0.85rem;
+}
+
+.examItem {
+    background: #f8d7da15;
+    border-left: 2px solid #dc3545;
+}
+
+.makeupItem {
+    background: #fff3cd15;
+    border-left: 2px solid #ffc107;
+}
+
+.examItem:hover {
+    background: #f8d7da30;
+}
+
+.makeupItem:hover {
+    background: #fff3cd30;
+}
+
+.examBadge {
+    background: #dc3545;
+    color: white;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+.makeupBadge {
+    background: #ffc107;
+    color: #212529;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+.noItems {
+    color: #999;
+    font-style: italic;
+    font-size: 0.8rem;
+    padding: 4px 0;
+}
+
+.groupExamsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.pageTitle {
+    color: #2c3e50;
+    margin-bottom: 24px;
+}
+
+
+/* PlanningGroup.module.css */
+
+
+/* Styles pour la carte groupe */
+
+.groupExamCard {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.makeupHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.toggleIcon {
+    font-size: 0.9rem;
+}
+
+
+/* Styles pour le modal intégré */
+
+.embeddedSchedule {
+    position: relative;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+.embeddedContent {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+/* Styles spécifiques aux rattrapages */
+
+.makeupSession {
+    background-color: #fff3cd;
+    border-left: 3px solid #ffc107;
+}
+
+.makeupBadge {
+    background: #ffc107;
+    color: #212529;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-left: 8px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .embeddedContent {
+        padding: 5px;
+    }
+
+    .scheduleGrid {
+        font-size: 0.8rem;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-weight: 500;
+    color: #333;
+}
+
+.formGroup select,
+.formGroup input,
+.formGroup textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+}
+
+.cancelButton {
+    background: #f0f0f0;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.saveButton {
+    background: #1976d2;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container {
+    padding: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: var(--background-light);
+    min-height: 100vh;
+}
+
+
+/* Grille des groupes compacte */
+
+.groupsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+    padding: 0.8rem 0;
+}
+
+
+/* Carte de groupe réduite */
+
+.groupCard {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    padding: 0.8rem;
+    min-height: 100px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.groupCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.cardHeader {
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cardHeader h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.cardPreview {
+    padding: 0.4rem;
+}
+
+.previewSession {
+    font-size: 0.75em;
+    padding: 0.2rem 0.4rem;
+    margin: 0.1rem 0;
+    background: var(--background-light);
+    border-radius: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Modal agrandie sans overflow */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--modal-z-index);
+}
+
+.modalContent {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 95vw;
+    max-height: 95vh;
+    min-width: 800px;
+    overflow: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: color 0.2s;
+}
+
+.closeButton:hover {
+    color: var(--text-dark);
+}
+
+
+/* Grille principale */
+
+.scheduleGrid {
+    display: grid;
+    grid-template-columns: auto repeat(6, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--border-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.timeColumn {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--background-light);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.timeCell {
+    min-height: 66px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    color: var(--text-dark);
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dayHeader {
+    padding: 0.8rem;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.timeSlot {
+    min-height: 75px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.timeSlot:hover {
+    background-color: #f7fafc;
+}
+
+
+/* Sessions */
+
+.occupied {
+    background-color: #ebf8ff;
+    border: 1px solid #bee3f8;
+}
+
+.sessionContent {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    padding: 0.4rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sessionTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2b6cb0;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+}
+
+.sessionDetails {
+    font-size: 0.7rem;
+    color: #4a5568;
+}
+
+.sessionDetails span {
+    display: block;
+    line-height: 1.3;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.addButton {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.addButton:hover {
+    background: var(--secondary-color);
+}
+
+
+/* Sessions compactes */
+
+.sessionCard {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #e3f2fd;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 0.4rem;
+    font-size: 0.75em;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sessionCard:hover {
+    background: #bbdefb;
+    z-index: 3;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sessionTitle {
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: #0d47a1;
+}
+
+.sessionDetails {
+    color: #455a64;
+    line-height: 1.3;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.durationBadge {
+    background: #3b82f6;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+
+/* PlanningGroup.module.css */
+
+.exportButtons {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    align-items: center;
+}
+
+.excelButton {
+    background: #217346;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.excelButton:hover {
+    background: #1a5c38;
+}
+
+.studentList {
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.studentList ul {
+    padding-left: 1rem;
+    list-style-type: disc;
+}
+
+.studentList li {
+    margin: 0.3rem 0;
+}
+
+.pdfButton {
+    background: #e53e3e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pdfButton:hover {
+    background: #c53030;
+}
+
+.pdfButton:disabled {
+    background: #718096;
+    cursor: not-allowed;
+}
+
+.searchInput {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filterSelect {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+}
+
+.groupsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .addButton {
+        grid-column: span 1;
+    }
+}
+
+
+/* Classmates List Styles */
+
+.classmatesContainer {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.classmatesTitle {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.classmatesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.classmateCard {
+    background: var(--background-light);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.classmateCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.classmateAvatar {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.classmateInfo {
+    flex: 1;
+}
+
+.classmateName {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.classmateDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.detailItem i {
+    width: 16px;
+    color: var(--primary-color);
+}
+
+.emptyClassmates {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-light);
+}
+
+.emptyClassmates i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.emptyClassmates p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.createButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.createButton:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.radioGroup {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.radioLabel:hover {
+    background-color: #f5f5f5;
+}
+
+.radioLabel input[type="radio"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}

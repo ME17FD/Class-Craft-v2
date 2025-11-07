@@ -1,0 +1,78 @@
+.dashboardContainer {
+    padding: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.logoutButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #2d3748;
+    transition: color 0.2s ease;
+}
+
+.logoutButton:hover {
+    color: #e53e3e;
+}
+
+.logoutIcon {
+    vertical-align: middle;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2b6cb0;
+    font-weight: bold;
+}
+
+.userInfo {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4a5568;
+}
+
+.userInfo h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: #2d3748;
+}
+
+.userInfo p {
+    font-size: 1rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.tabButton {
+    background: #edf2f7;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: #2d3748;
+    transition: all 0.2s;
+}
+
+.tabButton:hover {
+    background: #e2e8f0;
+}
+
+.activeTab {
+    background: #2b6cb0;
+    color: white;
+    border-color: #2b6cb0;
+}

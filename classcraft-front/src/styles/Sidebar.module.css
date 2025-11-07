@@ -1,0 +1,167 @@
+/* Style de base pour la sidebar */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--primary-blue);
+    /* Remplace #000a99 */
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 100000;
+    padding: var(--space-lg);
+    /* Utilisation de votre variable d'espacement */
+    box-shadow: var(--shadow-lg);
+    /* Utilisation de votre variable d'ombre */
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+
+/* Bouton de toggle */
+
+.toggleButton {
+    position: absolute;
+    top: 15px;
+    /* 2rem */
+    right: 90px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: none;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    /* Ombre légère */
+    transition: transform 0.3s ease;
+}
+
+.toggleButton:hover {
+    transform: scale(1.1);
+    background-color: var(--light-blue);
+    /* Effet bleu clair au survol */
+}
+
+
+/* Bouton de fermeture */
+
+.closeButton {
+    position: absolute;
+    top: var(--space-sm);
+    /* 0.5rem */
+    right: var(--space-sm);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    color: var(--light-blue);
+    /* Bleu clair au survol */
+}
+
+
+/* Section profil */
+
+.profileSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.profileCircle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--dark-blue);
+    /* Fond bleu foncé */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileName {
+    margin-top: var(--space-md);
+    font-size: 1.125rem;
+    color: white;
+}
+
+
+/* Boutons de navigation */
+
+.navButtons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.navButton {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--secondary-blue);
+    /* Bleu secondaire */
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    /* Rayon moyen */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navButton:hover {
+    background: var(--light-blue);
+    /* Bleu clair au survol */
+    transform: scale(1.02);
+}
+
+
+/* Bouton de déconnexion */
+
+.logoutButton {
+    position: absolute;
+    bottom: 70px;
+    right: 50%;
+    left: 50%;
+    background: var(--secondary-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logoutButton:hover {
+    background: var(--error-red);
+    /* Rouge d'erreur pour la déconnexion */
+}
+
+
+/* Overlay */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+body.sidebar-open {
+    overflow: hidden;
+}
