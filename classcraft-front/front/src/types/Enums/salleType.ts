@@ -1,0 +1,1 @@
+export type SalleType = "AMPHITHEATRE" | "SALLETD" | "SALLETP";
