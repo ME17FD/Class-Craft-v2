@@ -25,6 +25,17 @@ export const navigationSections = [
         ],
     },
     {
+        id: 'gestion-ressources',
+        title: 'Gestion des Ressources',
+        links: [
+            { id: 'salles', label: 'Salles', icon: '🏛️', path: '/salles' },
+            { id: 'professeurs', label: 'Professeurs', icon: '👨‍🏫', path: '/professors' },
+            { id: 'filieres', label: 'Filières', icon: '🎓', path: '/filieres' },
+            { id: 'modules', label: 'Modules', icon: '📖', path: '/modules' },
+            { id: 'groupes', label: 'Groupes', icon: '👥', path: '/groupes' },
+        ],
+    },
+    {
         id: 'cours-enseignement',
         title: 'Cours & Enseignement',
         links: [

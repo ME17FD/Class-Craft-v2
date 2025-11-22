@@ -1,6 +1,6 @@
 export type ReservationType =
     | "SEANCE"
-    | "RATTRAPAGECOURS"
+    | "RATTRAPAGECOUR"
     | "EXAM"
     | "RATTRAPAGEEXAM"
     | "EVENEMENT"

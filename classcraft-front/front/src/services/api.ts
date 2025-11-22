@@ -12,13 +12,25 @@ const api = axios.create({
 // Add request interceptor to include auth token
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem("token");
-    if (!token) {
-      // Redirect to login if no token exists
-      window.location.href = "/";
-      return Promise.reject(new Error("No authentication token found"));
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
     }
-    config.headers.Authorization = `Bearer ${token}`;
     return config;
   });
-  console.log("API BASE URL:", import.meta.env.VITE_API_BASE_URL);
+
+// Add response interceptor to handle 401 errors
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      // Token invalide ou expiré
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      // Ne pas rediriger automatiquement, laisser App.tsx gérer
+    }
+    return Promise.reject(error);
+  }
+);
+
+console.log("API BASE URL:", import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080');
 export default api;

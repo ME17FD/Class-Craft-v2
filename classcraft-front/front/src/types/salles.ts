@@ -1,8 +1,24 @@
 import type { SalleType } from "./Enums/salleType";
 
-export interface Salle {
+export interface SalleDto {
     id: number;
-    nom: string;
+    name: string;
     type: SalleType;
     capacity: number;
+}
+
+export interface SalleRequestDto {
+    name: string;
+    type: SalleType;
+    capacity: number;
+}
+
+export interface PageResponse<T> {
+    content: T[];
+    totalElements: number;
+    totalPages: number;
+    size: number;
+    number: number;
+    first: boolean;
+    last: boolean;
 }

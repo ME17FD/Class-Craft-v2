@@ -1,8 +1,5 @@
 package com.ClassCraft.site.config;
 
-import com.ClassCraft.site.models.User;
-import com.ClassCraft.site.models.UserRole;
-import com.ClassCraft.site.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.ClassCraft.site.models.User;
+import com.ClassCraft.site.models.UserRole;
+import com.ClassCraft.site.repository.UserRepository;
 
 @Component
 public class AdminInitializer implements CommandLineRunner {
@@ -54,6 +55,8 @@ public class AdminInitializer implements CommandLineRunner {
         User admin = new User();
         admin.setEmail(adminEmail);
         admin.setPassword(passwordEncoder.encode(adminPassword));
+        admin.setFirstName("Admin");
+        admin.setLastName("User");
         admin.setRole(UserRole.ADMIN);
         admin.setApproved(true);
         admin.setGroupe(null);

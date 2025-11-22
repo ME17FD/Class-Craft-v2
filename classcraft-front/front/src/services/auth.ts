@@ -20,14 +20,18 @@ interface SignInData {
 }
 
 interface AuthResponse {
-  token: string;
-  role: string;
-  userDetails: {
+  user: {
     id: number;
     email: string;
-    firstName: string;
-    lastName: string;
+    role?: string;
+    approved?: boolean;
+    groupeId?: number | null;
   };
+  tokenType: string;
+  accessToken: string;
+  accessTokenExpiresAt: number;
+  refreshToken: string;
+  refreshTokenExpiresAt: number;
 }
 
 const API_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080') + "/api/auth";

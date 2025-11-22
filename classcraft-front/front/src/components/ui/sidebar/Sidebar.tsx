@@ -20,6 +20,7 @@ interface SidebarProps {
   sections: SidebarSection[];
   currentPath: string;
   onNavigate: (path: string) => void;
+  onLogout?: () => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -27,11 +28,19 @@ const Sidebar: React.FC<SidebarProps> = ({
   onClose,
   sections,
   currentPath,
-  onNavigate
+  onNavigate,
+  onLogout
 }) => {
   const handleLinkClick = (path: string) => {
     onNavigate(path);
     onClose();
+  };
+
+  const handleLogout = () => {
+    if (onLogout) {
+      onLogout();
+      onClose();
+    }
   };
 
   return (
@@ -87,6 +96,44 @@ const Sidebar: React.FC<SidebarProps> = ({
             </div>
           )}
         </nav>
+
+        {/* Bouton de déconnexion */}
+        {onLogout && (
+          <div style={{ 
+            padding: '20px', 
+            borderTop: '1px solid var(--color-border, #e0e0e0)',
+            marginTop: 'auto'
+          }}>
+            <button
+              onClick={handleLogout}
+              style={{
+                width: '100%',
+                padding: '12px',
+                backgroundColor: '#d32f2f',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '4px',
+                fontSize: '14px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                transition: 'background-color 0.3s'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = '#c62828';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = '#d32f2f';
+              }}
+            >
+              <span>🚪</span>
+              <span>Déconnexion</span>
+            </button>
+          </div>
+        )}
       </aside>
     </>
   );

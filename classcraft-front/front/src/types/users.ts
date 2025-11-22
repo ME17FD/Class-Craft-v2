@@ -4,7 +4,9 @@ export interface User {
     id: number;
     email: string;
     password: string;
+    firstName: string;
+    lastName: string;
     role: UserRole;
     approved: boolean;
-    groupe_id: number;
+    groupeId: number;
 }
