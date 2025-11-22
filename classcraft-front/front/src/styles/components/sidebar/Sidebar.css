@@ -1,0 +1,203 @@
+/* =============================================
+   FILE: Sidebar.css
+   SIDEBAR NAVIGATION STYLES
+   ============================================= */
+
+
+/* Burger Menu - Toujours en haut à gauche */
+
+.burger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    z-index: 1001;
+    transition: all 0.2s ease;
+    background-color: var(--color-surface-primary);
+    border: 1px solid var(--color-border-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.burger-menu:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.burger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text-primary);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.burger-menu.open .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.open .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* Sidebar - Toujours en haut à gauche */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: var(--color-surface-primary);
+    border-right: 1px solid var(--color-border-light);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+
+/* Overlay */
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Header */
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border-light);
+    background-color: var(--color-surface-secondary);
+    position: relative;
+}
+
+.sidebar-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.sidebar-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-close:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-text-primary);
+}
+
+
+/* Navigation Sections */
+
+.sidebar-nav {
+    padding: 0;
+}
+
+.sidebar-section {
+    margin-bottom: 10px;
+}
+
+.sidebar-section-title {
+    padding: 12px 20px;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--color-border-light);
+    margin: 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin: 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    font-weight: var(--font-weight-medium);
+}
+
+.sidebar-link:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-accent);
+    border-left-color: var(--color-tertiary);
+}
+
+.sidebar-link.active {
+    background-color: var(--color-surface-secondary);
+    color: var(--color-accent);
+    border-left-color: var(--color-accent);
+}
+
+.sidebar-icon {
+    margin-right: 12px;
+    font-size: var(--font-size-lg);
+    width: 20px;
+    text-align: center;
+}
+
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+    }
+    .burger-menu {
+        top: 15px;
+        left: 15px;
+    }
+}

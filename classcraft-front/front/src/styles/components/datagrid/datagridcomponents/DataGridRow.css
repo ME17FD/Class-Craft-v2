@@ -1,0 +1,96 @@
+/* =============================================
+   FILE: DataGridRow.css
+   ROW-SPECIFIC STYLES
+   ============================================= */
+
+
+/* Modified Row Indicator */
+
+.modified-badge {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-warning);
+    border-radius: 50%;
+    margin-left: 4px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Row Actions */
+
+.new-row-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-add-btn {
+    background-color: var(--color-success);
+    color: var(--color-text-light);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    transition: all 0.2s ease;
+    font-family: var(--font-family-primary);
+}
+
+.confirm-add-btn:hover {
+    background-color: var(--color-success-dark);
+    transform: translateY(-1px);
+}
+
+.confirm-add-btn:disabled {
+    background-color: var(--color-text-disabled);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cancel-add-btn {
+    background-color: var(--color-warning);
+    color: var(--color-text-light);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    transition: all 0.2s ease;
+    font-family: var(--font-family-primary);
+}
+
+.cancel-add-btn:hover {
+    background-color: var(--color-warning-dark);
+    transform: translateY(-1px);
+}
+
+
+/* Responsive Row Actions */
+
+@media (max-width: 768px) {
+    .new-row-actions {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .confirm-add-btn,
+    .cancel-add-btn {
+        padding: 8px 12px;
+        font-size: var(--font-size-xs);
+    }
+}

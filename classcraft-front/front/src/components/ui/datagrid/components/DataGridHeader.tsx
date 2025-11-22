@@ -1,6 +1,6 @@
 // components/DataGridHeader.tsx
 import React from 'react';
-
+import '../../../../styles/components/datagrid/datagridcomponents/dataGridHeader.css';
 interface DataGridHeaderProps {
   title?: string;
   actions?: React.ReactNode;

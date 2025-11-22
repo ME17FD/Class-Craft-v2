@@ -1,0 +1,43 @@
+/* =============================================
+   FILE: color-palette.css
+   MAIN COLOR VARIABLES AND PALETTE
+   ============================================= */
+
+:root {
+    --color-primary-light: #e7eaf6;
+    --color-secondary-light: #a2a8d3;
+    --color-tertiary: #38598b;
+    --color-accent: #113f67;
+    --color-border: #a2a8d3;
+    --color-border-light: #e7eaf6;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --color-primary-light: #113f67;
+        --color-secondary-light: #38598b;
+        --color-tertiary: #a2a8d3;
+        --color-accent: #e7eaf6;
+        --color-border: #38598b;
+        --color-border-light: #113f67;
+    }
+}
+
+:root {
+    --color-error: #dc3545;
+    --color-error-light: #f8d7da;
+    --color-error-dark: #721c24;
+    --color-error-border: #f5c6cb;
+    --color-warning: #ffc107;
+    --color-warning-light: #fff3cd;
+    --color-warning-dark: #856404;
+    --color-warning-border: #ffeaa7;
+    --color-success: #28a745;
+    --color-success-light: #d4edda;
+    --color-success-dark: #155724;
+    --color-success-border: #c3e6cb;
+    --color-info: #17a2b8;
+    --color-info-light: #d1ecf1;
+    --color-info-dark: #0c5460;
+    --color-info-border: #bee5eb;
+}

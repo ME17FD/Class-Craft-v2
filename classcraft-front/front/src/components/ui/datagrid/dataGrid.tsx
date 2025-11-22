@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // DataGrid.tsx
 import React from 'react';
-import type { DataGridProps } from './dataGrid.types';
-import { useDataGrid } from './hooks/useDataGrid';
+import type { DataGridProps } from '../../../types/datagrid/dataGrid.types';
+import { useDataGrid } from '../../../hooks/datagrid/useDataGrid';
 import { DataGridHeader } from './components/DataGridHeader';
 import { DataGridBody } from './components/DataGridBody';
 import { DataGridPagination } from './components/DataGridPagination';
-import './dataGrid.css';
+import '../../../styles/components/datagrid/dataGrid.css';
 
 export const DataGrid: React.FC<DataGridProps> = (props) => {
   const {
@@ -112,6 +112,7 @@ export const DataGrid: React.FC<DataGridProps> = (props) => {
         <DataGridPagination
           pagination={pagination}
           dataLength={props.data.length}
+          totalDataLength={props.data.length} 
         />
       )}
     </div>
