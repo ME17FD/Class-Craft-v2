@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // components/DataGridBody.tsx
 import React from 'react';
-import type { Column, EditState } from '../dataGrid.types';
+import type { Column, EditState } from '../../../../types/datagrid/dataGrid.types';
 import { DataGridRow } from './DataGridRow';
+import '../../../../styles/components/datagrid/datagridcomponents/DataGridBody.css';
 
 interface DataGridBodyProps {
   sortedData: any[];

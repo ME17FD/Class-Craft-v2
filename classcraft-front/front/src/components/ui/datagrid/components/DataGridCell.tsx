@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // components/DataGridCell.tsx
 import React from 'react';
-import type { Column, EditState } from '../dataGrid.types';
+import type { Column, EditState } from '../../../../types/datagrid/dataGrid.types';
+import '../../../../styles/components/datagrid/datagridcomponents/DataGridCell.css';
 
 interface DataGridCellProps {
   row: any;

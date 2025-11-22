@@ -1,0 +1,93 @@
+/* =============================================
+   FILE: DataGridPagination.css
+   PAGINATION STYLES
+   ============================================= */
+
+.blue-data-grid .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--color-background-alt);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.blue-data-grid .pagination-info {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family-primary);
+}
+
+.blue-data-grid .pagination-controls {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.blue-data-grid .pagination-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface-primary);
+    color: var(--color-tertiary);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: all 0.2s ease;
+    font-family: var(--font-family-primary);
+}
+
+.blue-data-grid .pagination-btn:hover:not(:disabled) {
+    background-color: var(--color-tertiary);
+    color: var(--color-text-light);
+    border-color: var(--color-tertiary);
+}
+
+.blue-data-grid .pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--color-background-input-disabled);
+    color: var(--color-text-disabled);
+}
+
+.blue-data-grid .pagination-btn.active {
+    background-color: var(--color-tertiary);
+    color: var(--color-text-light);
+    border-color: var(--color-tertiary);
+}
+
+
+/* Pagination Arrows and Ellipsis */
+
+.pagination-btn.pagination-arrow {
+    padding: 8px 12px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
+}
+
+.pagination-ellipsis {
+    padding: 8px 4px;
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* Responsive Pagination */
+
+@media (max-width: 768px) {
+    .blue-data-grid .pagination {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    .blue-data-grid .pagination-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .blue-data-grid .pagination-btn {
+        padding: 6px 10px;
+        font-size: var(--font-size-xs);
+    }
+    .pagination-btn.pagination-arrow {
+        padding: 6px 8px;
+    }
+}

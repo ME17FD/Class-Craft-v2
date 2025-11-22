@@ -1,0 +1,156 @@
+/* Import all CSS files in the correct order */
+
+@import '../../colors/color-palette.css';
+@import '../../colors/background-variables.css';
+@import '../../colors/text-variables.css';
+
+/* =============================================
+   FILE: dataGrid.css
+   MAIN DATAGRID STYLES AND CONTAINER
+   ============================================= */
+
+.blue-data-grid {
+    font-family: var(--font-family-primary);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-background);
+}
+
+.blue-data-grid .grid-header {
+    background-color: var(--color-tertiary);
+    color: var(--color-text-light);
+    padding: 16px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.blue-data-grid .grid-header h3 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+.blue-data-grid .grid-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-surface-primary);
+}
+
+.blue-data-grid .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-text-tertiary);
+    background-color: var(--color-background-alt);
+}
+
+.blue-data-grid .loading-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-tertiary);
+    background-color: var(--color-background-alt);
+}
+
+
+/* Save Header Styles */
+
+.save-header {
+    background-color: var(--color-success);
+    color: var(--color-text-light);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.save-header .save-info {
+    font-size: var(--font-size-sm);
+}
+
+.save-header .save-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.save-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    transition: all 0.2s ease;
+    font-family: var(--font-family-primary);
+}
+
+.save-btn.primary {
+    background-color: var(--color-surface-primary);
+    color: var(--color-success);
+}
+
+.save-btn.primary:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.save-btn.secondary {
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 1px solid var(--color-text-light);
+}
+
+.save-btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Add Button */
+
+.add-btn {
+    background-color: var(--color-success);
+    color: var(--color-text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    font-family: var(--font-family-primary);
+}
+
+.add-btn:hover {
+    background-color: var(--color-success-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.add-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .blue-data-grid .grid-table {
+        font-size: var(--font-size-sm);
+    }
+    .save-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    .save-header .save-actions {
+        justify-content: center;
+    }
+    .add-btn {
+        padding: 8px 16px;
+        font-size: var(--font-size-xs);
+    }
+}

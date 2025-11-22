@@ -1,0 +1,103 @@
+/* =============================================
+   FILE: DataGridCell.css
+   CELL AND EDITABLE STYLES
+   ============================================= */
+
+
+/* Editable Cells */
+
+.editable-cell {
+    position: relative;
+    cursor: pointer;
+}
+
+.editable-cell:hover {
+    background-color: var(--color-info-light) !important;
+}
+
+.editable-cell.editing {
+    background-color: var(--color-warning-light) !important;
+    padding: 0 !important;
+}
+
+.editable-input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-tertiary);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: var(--font-size-sm);
+    background-color: var(--color-surface-primary);
+    box-sizing: border-box;
+    font-family: var(--font-family-primary);
+    color: var(--color-text-primary);
+}
+
+.editable-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+
+/* Invalid Field Styles */
+
+.invalid-field {
+    border-color: var(--color-error) !important;
+    background-color: var(--color-error-light) !important;
+}
+
+.invalid-field:focus {
+    border-color: var(--color-error-dark) !important;
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2) !important;
+}
+
+.validation-error {
+    color: var(--color-error);
+    font-size: var(--font-size-xs);
+    margin-top: 4px;
+    font-weight: var(--font-weight-medium);
+}
+
+
+/* Actions Cell */
+
+.actions-cell {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.delete-btn {
+    background-color: var(--color-error);
+    color: var(--color-text-light);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    transition: all 0.2s ease;
+    font-family: var(--font-family-primary);
+}
+
+.delete-btn:hover {
+    background-color: var(--color-error-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(244, 67, 54, 0.3);
+}
+
+.delete-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Responsive Cell */
+
+@media (max-width: 768px) {
+    .editable-input {
+        padding: 6px 8px;
+        font-size: var(--font-size-xs);
+    }
+}

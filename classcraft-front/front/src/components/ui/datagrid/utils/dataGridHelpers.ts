@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // utils/dataGridHelpers.ts
-import type { Column } from '../dataGrid.types';
+import type { Column } from '../../../../types/datagrid/dataGrid.types';
 
 export const dataGridHelpers = {
     // Fonction pour valider une ligne

@@ -1,0 +1,157 @@
+/* =============================================
+   FILE: background-variables.css
+   BACKGROUND COLOR VARIABLES FOR THEME
+   Depends on color-palette.css
+   ============================================= */
+
+
+/* =============================================
+   LIGHT THEME BACKGROUND VARIABLES
+   Background colors for light mode
+   ============================================= */
+
+:root {
+    /* Main background colors */
+    --color-background: #ffffff;
+    /* Main background */
+    --color-background-alt: #e7eaf6;
+    /* Alternative background */
+    --color-background-card: #f8f9fa;
+    /* Card/container background */
+    --color-background-header: #38598b;
+    /* Header background */
+    --color-background-footer: #113f67;
+    /* Footer background */
+    --color-background-sidebar: #e7eaf6;
+    /* Sidebar background */
+    --color-background-overlay: rgba(0, 0, 0, 0.5);
+    /* Overlay background */
+    /* Surface colors for components */
+    --color-surface-primary: #ffffff;
+    --color-surface-secondary: #e7eaf6;
+    --color-surface-tertiary: #f8f9fa;
+    --color-surface-hover: #f1f3f9;
+    /* Hover state background */
+    /* Interactive element backgrounds */
+    --color-background-button-primary: var(--color-tertiary);
+    --color-background-button-secondary: var(--color-secondary-light);
+    --color-background-button-hover: var(--color-accent);
+    /* Form element backgrounds */
+    --color-background-input: #ffffff;
+    --color-background-input-disabled: #f8f9fa;
+}
+
+
+/* =============================================
+   DARK THEME BACKGROUND VARIABLES
+   Background colors for dark mode
+   ============================================= */
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        /* Main background colors */
+        --color-background: #0a1a2a;
+        --color-background-alt: #113f67;
+        --color-background-card: #152642;
+        --color-background-header: #113f67;
+        --color-background-footer: #0a1a2a;
+        --color-background-sidebar: #113f67;
+        --color-background-overlay: rgba(0, 0, 0, 0.7);
+        /* Darker overlay */
+        /* Surface colors for components */
+        --color-surface-primary: #152642;
+        --color-surface-secondary: #113f67;
+        --color-surface-tertiary: #0a1a2a;
+        --color-surface-hover: #1e3a5c;
+        /* Darker hover state */
+        /* Interactive element backgrounds */
+        --color-background-button-primary: var(--color-tertiary);
+        --color-background-button-secondary: var(--color-secondary-light);
+        --color-background-button-hover: var(--color-accent);
+        /* Form element backgrounds */
+        --color-background-input: #152642;
+        --color-background-input-disabled: #0a1a2a;
+    }
+}
+
+
+/* =============================================
+   BACKGROUND UTILITY CLASSES
+   Classes for background color management
+   ============================================= */
+
+.bg-primary {
+    background-color: var(--color-background);
+}
+
+.bg-alt {
+    background-color: var(--color-background-alt);
+}
+
+.bg-card {
+    background-color: var(--color-background-card);
+}
+
+.bg-header {
+    background-color: var(--color-background-header);
+}
+
+.bg-footer {
+    background-color: var(--color-background-footer);
+}
+
+.bg-sidebar {
+    background-color: var(--color-background-sidebar);
+}
+
+.bg-surface-primary {
+    background-color: var(--color-surface-primary);
+}
+
+.bg-surface-secondary {
+    background-color: var(--color-surface-secondary);
+}
+
+.bg-surface-tertiary {
+    background-color: var(--color-surface-tertiary);
+}
+
+.bg-surface-hover {
+    background-color: var(--color-surface-hover);
+}
+
+.bg-button-primary {
+    background-color: var(--color-background-button-primary);
+}
+
+.bg-button-secondary {
+    background-color: var(--color-background-button-secondary);
+}
+
+.bg-button-hover {
+    background-color: var(--color-background-button-hover);
+}
+
+.bg-input {
+    background-color: var(--color-background-input);
+}
+
+.bg-input-disabled {
+    background-color: var(--color-background-input-disabled);
+}
+
+.bg-error {
+    background-color: var(--color-error-light);
+}
+
+.bg-warning {
+    background-color: var(--color-warning-light);
+}
+
+.bg-success {
+    background-color: var(--color-success-light);
+}
+
+.bg-info {
+    background-color: var(--color-info-light);
+}

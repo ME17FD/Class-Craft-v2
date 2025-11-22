@@ -1,0 +1,33 @@
+/* =============================================
+   FILE: DataGridHeader.css
+   HEADER AND COLUMN STYLES
+   ============================================= */
+
+.blue-data-grid .grid-table th {
+    background-color: var(--color-tertiary);
+    color: var(--color-text-light);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    border-bottom: 2px solid var(--color-border);
+    font-family: var(--font-family-primary);
+}
+
+
+/* Required Field Indicator */
+
+.required-field::after {
+    content: " *";
+    color: var(--color-error);
+}
+
+
+/* Responsive Header */
+
+@media (max-width: 768px) {
+    .blue-data-grid .grid-table th {
+        padding: 8px 12px;
+        font-size: var(--font-size-xs);
+    }
+}

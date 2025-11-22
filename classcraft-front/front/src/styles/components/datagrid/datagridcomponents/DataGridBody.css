@@ -1,0 +1,56 @@
+/* =============================================
+   FILE: DataGridBody.css
+   BODY AND ROW STYLES
+   ============================================= */
+
+.blue-data-grid .grid-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border-light);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-primary);
+}
+
+.blue-data-grid .grid-table tr:hover {
+    background-color: var(--color-surface-hover);
+    transition: background-color 0.2s ease;
+}
+
+.blue-data-grid .grid-table tr:nth-child(even) {
+    background-color: var(--color-surface-secondary);
+}
+
+.blue-data-grid .grid-table tr:nth-child(even):hover {
+    background-color: var(--color-surface-tertiary);
+}
+
+
+/* New Row Styles */
+
+.new-row {
+    background: linear-gradient(135deg, var(--color-success-light) 0%, var(--color-info-light) 100%) !important;
+    border-left: 4px solid var(--color-success);
+}
+
+.new-row td {
+    border-bottom: 2px dashed var(--color-success-border) !important;
+}
+
+.new-row .editable-cell {
+    background-color: transparent !important;
+}
+
+.new-row-placeholder {
+    color: var(--color-text-tertiary);
+    font-style: italic;
+}
+
+
+/* Responsive Body */
+
+@media (max-width: 768px) {
+    .blue-data-grid .grid-table td {
+        padding: 8px 12px;
+        font-size: var(--font-size-xs);
+    }
+}
